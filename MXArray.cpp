@@ -12,8 +12,6 @@
 #include "MXArray.h"
 namespace magnux
 {
-namespace array
-{
 #define nullptr 0
 	
 	// 指定下一跳的构造函数 | Constructor with nextptr 
@@ -153,8 +151,6 @@ namespace array
 			throw;
 		}
 	}
-
-}//end namespace array 
 }//end namespace magnux 
 
 /* eof MXArray.cpp */

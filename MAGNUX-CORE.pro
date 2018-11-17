@@ -27,14 +27,16 @@ SOURCES += \
     MXNothing.cpp \
     MXArray.cpp \
     MXAlgorithm.cpp \
-    MAGNUX_LIBCRE.CPP
+    MAGNUX_LIBCRE.CPP \
+    MXThread.cpp
 
 HEADERS += \
         MAGNUX_CORE.h \
     MAGNUX_LIBCRE.H \
     MXAlgorithm.h \
     MXArray.h \
-    MXNothing.h
+    MXNothing.h \
+    MXThread.h
 
 unix {
     target.path = /usr/lib

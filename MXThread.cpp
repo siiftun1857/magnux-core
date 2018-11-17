@@ -1,31 +1,18 @@
 /******************************************************************************* 
-** Magnus MAGNUX Cpp head code 
+** Magnus MAGNUX Cpp source code 
 ** (c) Copyright 2011-2018 Magnus siiftun1857 Frankline 
 ** This creation is licensed under Apache License Version 2.0 
 ** For more information, see LICENSE and README.MD 
 **  
-** Filename: siiftun1857/magnux-core/MXNothing.h 
+** Filename: siiftun1857/magnux-core/MXThread.cpp
 ** Author: Magnus siiftun1857 Frankline 
-** Date: 2018-11-18 11:37:58 
+** Date: 2018-11-18 16:30:38
 ** 
 */
-#ifndef _MXNOTHING_H_
-#define _MXNOTHING_H_
-
-#if _MSC_VER > 1000 
-#pragma once
-#endif // _MSC_VER > 1000
-
-//#include "MAGNUX_CORE.H"
-
+#include "MXThread.h"
 namespace magnux
 {
-namespace nothing
-{
 
-}//end namespace nothing 
 }//end namespace magnux 
 
-#endif // !ifdef _MXNOTHING_H_
-
-/* eof MXNothing.h */
+/* eof MXThread.cpp */

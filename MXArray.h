@@ -12,7 +12,6 @@
 #ifndef _MXARRAY_H_
 #define _MXARRAY_H_
 
-
 #if _MSC_VER > 1000 
 #pragma once
 #endif // _MSC_VER > 1000
@@ -21,9 +20,6 @@
 
 namespace magnux
 {
-namespace array
-{
-
 // Magnux链表数组 | Magnux Chain Array
 template <typename datatype>
 class MXArray
@@ -63,8 +59,6 @@ public:
 	// 摧毁特定元素 | Destruct element by ident 
 	datatype popByIdent(int byident);
 };
-
-}//end namespace array 
 }//end namespace magnux 
 
 #endif // !ifdef _MXARRAY_H_

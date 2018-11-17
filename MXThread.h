@@ -4,13 +4,13 @@
 ** This creation is licensed under Apache License Version 2.0 
 ** For more information, see LICENSE and README.MD 
 **  
-** Filename: siiftun1857/magnux-core/MXNothing.h 
+** Filename: siiftun1857/magnux-core/MXThread.h
 ** Author: Magnus siiftun1857 Frankline 
-** Date: 2018-11-18 11:37:58 
+** Date: 2018-11-18 16:29:28
 ** 
 */
-#ifndef _MXNOTHING_H_
-#define _MXNOTHING_H_
+#ifndef _MXTHREAD_H_
+#define _MXTHREAD_H_
 
 #if _MSC_VER > 1000 
 #pragma once
@@ -20,12 +20,9 @@
 
 namespace magnux
 {
-namespace nothing
-{
 
-}//end namespace nothing 
 }//end namespace magnux 
 
-#endif // !ifdef _MXNOTHING_H_
+#endif // !ifdef _MXTHREAD_H_
 
-/* eof MXNothing.h */
+/* eof MXThread.h */
