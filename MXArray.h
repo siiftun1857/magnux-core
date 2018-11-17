@@ -12,6 +12,11 @@
 #ifndef _MXARRAY_H_
 #define __MXARRAY_H
 
+
+#if _MSC_VER > 1000 
+#pragma once
+#endif // _MSC_VER > 1000
+
 //#include "MAGNUX_CORE.H"
 
 namespace magnux
@@ -19,45 +24,45 @@ namespace magnux
 namespace array
 {
 
-// MagnuxÁ´±íÊı×é | Magnux Chain Array
+// Magnuxé“¾è¡¨æ•°ç»„ | Magnux Chain Array
 template <typename datatype>
 class MXArray
 {
 private:
 
-	// ÏÂÒ»ÌøµØÖ· | Next element ptr 
+	// ä¸‹ä¸€è·³åœ°å€ | Next element ptr 
 	MXArray*nextptr;
-	// Ö÷ÒªÊı¾İÇøÓò | Primary data 
+	// ä¸»è¦æ•°æ®åŒºåŸŸ | Primary data 
 	datatype data;
 	
-	// Ö¸¶¨ÏÂÒ»ÌøµÄ¹¹Ôìº¯Êı | Constructor with nextptr 
+	// æŒ‡å®šä¸‹ä¸€è·³çš„æ„é€ å‡½æ•° | Constructor with nextptr 
 	MXArray(datatype initdata,MXArray*manualnextptr);
 	
-	// »ñÈ¡Ö¸¶¨ÔªËØµÄÖ¸Õë | Last element ptr 
+	// è·å–æŒ‡å®šå…ƒç´ çš„æŒ‡é’ˆ | Last element ptr 
 	MXArray*getPtrByIdent(int byident) const;
-	// »ñÈ¡Ä©Î²ÔªËØÖ¸Õë | Get last element ptr 
+	// è·å–æœ«å°¾å…ƒç´ æŒ‡é’ˆ | Get last element ptr 
 	MXArray*getFinalPtr() const;
 public:
 	
-	// Îö¹¹º¯Êı | Destructor
+	// ææ„å‡½æ•° | Destructor
 	~MXArray();
-	// ±ê×¼¹¹Ôìº¯Êı | Standard constructor 
+	// æ ‡å‡†æ„é€ å‡½æ•° | Standard constructor 
 	MXArray();
-	// ´øÊı¾İµÄ¹¹Ôìº¯Êı | Constructor with init data 
+	// å¸¦æ•°æ®çš„æ„é€ å‡½æ•° | Constructor with init data 
 	MXArray(datatype initdata);
-	// »ñÈ¡Éî¶È | Get length
+	// è·å–æ·±åº¦ | Get length
 	size_t getLength() const;
-	// »ñÈ¡Ö¸¶¨ÔªËØµÄÊı¾İÒıÓÃ | Get reference by element ident 
+	// è·å–æŒ‡å®šå…ƒç´ çš„æ•°æ®å¼•ç”¨ | Get reference by element ident 
 	datatype& getReferByIdent(size_t byident) const;
-	// ×·¼ÓÄ©Î² | Append 
+	// è¿½åŠ æœ«å°¾ | Append 
 	datatype& append(datatype&initdata);
-	// ×·¼ÓÌØ¶¨ÔªËØµÄÄ©Î² | Append by ident 
+	// è¿½åŠ ç‰¹å®šå…ƒç´ çš„æœ«å°¾ | Append by ident 
 	datatype& add(datatype&initdata,size_t byident);
-	// ×·¼ÓÌØ¶¨ÔªËØµÄÄ©Î² | Append by ident 
+	// è¿½åŠ ç‰¹å®šå…ƒç´ çš„æœ«å°¾ | Append by ident 
 	datatype& add(datatype&initdata,size_t byident);
-	// ³öÕ»Ä©Î² | Pop
+	// å‡ºæ ˆæœ«å°¾ | Pop
 	datatype popend();
-	// ´İ»ÙÌØ¶¨ÔªËØ | Destruct element by ident 
+	// æ‘§æ¯ç‰¹å®šå…ƒç´  | Destruct element by ident 
 	datatype popByIdent(size_t byident);
 }
 }//end namespace array 
@@ -66,4 +71,3 @@ public:
 #endif // !ifdef _MXARRAY_H
 
 /* eof MXArray.h */
-
