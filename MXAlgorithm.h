@@ -21,10 +21,9 @@
 
 namespace magnux
 {
-namespace algorithm
-{
 
-}//end namespace algorithm 
+void quickSort(bool (*cmpFun)(unsigned int,unsigned int),void(*setDataFun)(unsigned int,unsigned int),int leftEdge, int rightEdge);
+
 }//end namespace magnux 
 
 #endif // !ifdef _MXALGORITHM_H

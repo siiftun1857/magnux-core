@@ -1,30 +1,19 @@
 /******************************************************************************* 
-** Magnus MAGNUX Cpp head code 
+** Magnus MAGNUX Cpp source code 
 ** (c) Copyright 2011-2018 Magnus siiftun1857 Frankline 
 ** This creation is licensed under Apache License Version 2.0 
 ** For more information, see LICENSE and README.MD 
 **  
-** Filename: siiftun1857/magnux-core/MAGNUX_CORE.h 
+** Filename: siiftun1857/magnux-core/MAGNUX_LIBCRE.cpp 
 ** Author: Magnus siiftun1857 Frankline 
-** Date: 2018-11-18 11:41:33 
+** Date: 2018-11-18 13:59:59 
 ** 
 */
-#ifndef _MXCORE_H_
-#define __MXCORE_H
-
-
-#if _MSC_VER > 1000 
-#pragma once
-#endif // _MSC_VER > 1000
+#include "MAGNUX_LIBCRE.h"
 
 namespace magnux
 {
-namespace core
-{
-
-}//end namespace core 
+	
 }//end namespace magnux 
 
-#endif // !ifdef _MXCORE_H
-
-/* eof MAGNUX_CORE.h */
+/* eof MAGNUX_LIBCRE.cpp */
