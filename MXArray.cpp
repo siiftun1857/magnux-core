@@ -147,4 +147,4 @@ namespace array
 }//end namespace array 
 }//end namespace magnux 
 
-/* eof MX_Array.cpp */
+/* eof MXArray.cpp */
