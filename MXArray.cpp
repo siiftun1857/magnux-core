@@ -9,13 +9,24 @@
 ** Date: 2018-11-18 09:43:40 
 ** 
 */
-#include <MXArray.h>
+#include "MXArray.h"
 namespace magnux
 {
 namespace array
 {
+#define nullptr 0
+	
+	// 指定下一跳的构造函数 | Constructor with nextptr 
+	template <typename datatype>
+	MXArray<datatype>::MXArray(datatype initdata,MXArray*manualnextptr)
+	{
+		nextptr = manualnextptr;
+		data = initdata;
+	}
+	
 	// 获取指定元素的指针 | Last element ptr 
-	MXArray*MXArray::getPtrByIdent(int byident) const
+	template <typename datatype>
+	MXArray<datatype>* MXArray<datatype>::getPtrByIdent(int byident) const
 	{
 		if(byident < 0)
 		{
@@ -34,7 +45,8 @@ namespace array
 		}
 	}
 	// 获取末尾元素指针 | Get last element ptr 
-	MXArray*MXArray::getFinalPtr() const
+	template <typename datatype>
+	MXArray<datatype>* MXArray<datatype>::getFinalPtr() const
 	{
 		if(nextptr == nullptr)
 			return this;
@@ -42,23 +54,27 @@ namespace array
 	}
 	
 	// 析构函数 | Destructor
-	~MXArray::MXArray()
+	template <typename datatype>
+	MXArray<datatype>::~MXArray()
 	{
 		delete nextptr;//trigger next destructor
 	}
 	// 标准构造函数 | Standard constructor 
-	MXArray::MXArray()
+	template <typename datatype>
+	MXArray<datatype>::MXArray()
 	{
 		nextptr = nullptr;
 	}
-	// 带数据的构造函数 | Constructor with init data 
-	MXArray::MXArray(datatype initdata)
+	// 带数据的构造函数 | Constructor with init data
+	template <typename datatype> 
+	MXArray<datatype>::MXArray(datatype initdata)
 	{
 		nextptr = nullptr;
 		data = initdata;
 	}
 	// 获取深度 | Get length
-	size_t MXArray::getLength() const
+	template <typename datatype>
+	unsigned int MXArray<datatype>::getLength() const
 	{
 		if(nextptr == nullptr)
 		{
@@ -67,7 +83,8 @@ namespace array
 		return nextptr->getLength()-1;
 	}
 	// 获取指定元素的数据引用 | Get reference by element ident 
-	datatype& MXArray::getReferByIdent(int byident) const
+	template <typename datatype>
+	datatype& MXArray<datatype>::getReferByIdent(int byident) const
 	{
 		try{
 			return getPtrByIdent(byident)->data;
@@ -78,28 +95,14 @@ namespace array
 		}
 	}
 	// 追加末尾 | Append 
-	datatype& MXArray::append(datatype&initdata)
+	template <typename datatype>
+	datatype& MXArray<datatype>::append(datatype&initdata)
 	{
 		return (getFinalPtr()->nextptr = new MXArray(initdata))->data;
 	}
 	// 追加特定元素的末尾 | Append by ident 
-	datatype& MXArray::add(datatype&initdata,int byident)
-	{
-		try{
-			MXArray*target = getPtrByIdent(byident);
-			if(target==nullptr)
-			{
-				throw;
-			}
-			return (target->nextptr = new MXArray(initdata,target))->data;
-		}
-		catch(...)//TODO: magnux exception 
-		{
-			throw;
-		}
-	}
-	// 追加特定元素的末尾 | Append by ident 
-	datatype& MXArray::add(datatype&initdata,int byident)
+	template <typename datatype>
+	datatype& MXArray<datatype>::add(datatype&initdata,int byident)
 	{
 		try{
 			MXArray*target = getPtrByIdent(byident);
@@ -115,7 +118,8 @@ namespace array
 		}
 	}
 	// 出栈末尾 | Pop
-	datatype MXArray::popend()
+	template <typename datatype>
+	datatype MXArray<datatype>::popend()
 	{
 		MXArray*finalptr = getFinalPtr();
 		datatype& popdata = finalptr->data;
@@ -124,7 +128,8 @@ namespace array
 		return popdata;
 	}
 	// 摧毁特定元素 | Destruct element by ident 
-	datatype MXArray::popByIdent(int byident)
+	template <typename datatype>
+	datatype MXArray<datatype>::popByIdent(int byident)
 	{
 		try{
 			MXArray*target = getPtrByIdent(byident);
@@ -144,6 +149,7 @@ namespace array
 			throw;
 		}
 	}
+
 }//end namespace array 
 }//end namespace magnux 
 

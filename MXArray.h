@@ -51,20 +51,19 @@ public:
 	// 带数据的构造函数 | Constructor with init data 
 	MXArray(datatype initdata);
 	// 获取深度 | Get length
-	size_t getLength() const;
+	unsigned int getLength() const;
 	// 获取指定元素的数据引用 | Get reference by element ident 
-	datatype& getReferByIdent(size_t byident) const;
+	datatype& getReferByIdent(int byident) const;
 	// 追加末尾 | Append 
 	datatype& append(datatype&initdata);
 	// 追加特定元素的末尾 | Append by ident 
-	datatype& add(datatype&initdata,size_t byident);
-	// 追加特定元素的末尾 | Append by ident 
-	datatype& add(datatype&initdata,size_t byident);
+	datatype& add(datatype&initdata,int byident);
 	// 出栈末尾 | Pop
 	datatype popend();
 	// 摧毁特定元素 | Destruct element by ident 
-	datatype popByIdent(size_t byident);
-}
+	datatype popByIdent(int byident);
+};
+
 }//end namespace array 
 }//end namespace magnux 
 

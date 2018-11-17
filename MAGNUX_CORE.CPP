@@ -9,7 +9,7 @@
 ** Date: 2018-11-18 11:41:08 
 ** 
 */
-#include <MAGNUX_CORE.h>
+#include "MAGNUX_CORE.h"
 namespace magnux
 {
 namespace core
