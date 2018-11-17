@@ -30,7 +30,7 @@ void quickSort(bool (*cmpFun)(unsigned int,unsigned int),void(*setDataFun)(unsig
     unsigned int leftIndex = leftEdge;
     unsigned int rightIndex = rightEdge;
 
-	while (leftIndex < rightIndex)
+    while ((*cmpFun)(leftIndex,rightIndex))
 	{
 		//现在我们通过循环从右边开始搜索一个比轴值小的数据
 		while ((*cmpFun)(leftIndex,rightIndex))
