@@ -67,7 +67,7 @@ namespace array
 		return nextptr->getLength()-1;
 	}
 	// 获取指定元素的数据引用 | Get reference by element ident 
-	datatype& MXArray::getReferByIdent(size_t byident) const
+	datatype& MXArray::getReferByIdent(int byident) const
 	{
 		try{
 			return getPtrByIdent(byident)->data;
@@ -83,7 +83,7 @@ namespace array
 		return (getFinalPtr()->nextptr = new MXArray(initdata))->data;
 	}
 	// 追加特定元素的末尾 | Append by ident 
-	datatype& MXArray::add(datatype&initdata,size_t byident)
+	datatype& MXArray::add(datatype&initdata,int byident)
 	{
 		try{
 			MXArray*target = getPtrByIdent(byident);
@@ -99,7 +99,7 @@ namespace array
 		}
 	}
 	// 追加特定元素的末尾 | Append by ident 
-	datatype& MXArray::add(datatype&initdata,size_t byident)
+	datatype& MXArray::add(datatype&initdata,int byident)
 	{
 		try{
 			MXArray*target = getPtrByIdent(byident);
@@ -124,7 +124,7 @@ namespace array
 		return popdata;
 	}
 	// 摧毁特定元素 | Destruct element by ident 
-	datatype MXArray::popByIdent(size_t byident)
+	datatype MXArray::popByIdent(int byident)
 	{
 		try{
 			MXArray*target = getPtrByIdent(byident);
@@ -134,6 +134,7 @@ namespace array
 			}
 			datatype& popdata = target->data;
 			MXArray*popnextptr = target->nextptr;
+			target->nextptr=nullptr;
 			delete target;
 			getPtrByIdent(byident-1)->nextptr = popnextptr;
 			return popdata;
