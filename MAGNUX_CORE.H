@@ -19,7 +19,7 @@
 
 namespace magnux
 {
-namespace nothing
+namespace core
 {
 
 }//end namespace nothing 
