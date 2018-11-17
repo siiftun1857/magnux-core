@@ -10,7 +10,7 @@
 ** 
 */
 #ifndef _MXCORE_H_
-#define __MXCORE_H
+#define _MXCORE_H_
 
 
 #if _MSC_VER > 1000 
@@ -25,6 +25,6 @@ namespace core
 }//end namespace core 
 }//end namespace magnux 
 
-#endif // !ifdef _MXCORE_H
+#endif // !ifdef _MXCORE_H_
 
 /* eof MAGNUX_CORE.h */

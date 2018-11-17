@@ -10,7 +10,7 @@
 ** 
 */
 #ifndef _MXNOTHING_H_
-#define __MXNOTHING_H
+#define _MXNOTHING_H_
 
 
 #if _MSC_VER > 1000 
@@ -27,6 +27,6 @@ namespace nothing
 }//end namespace nothing 
 }//end namespace magnux 
 
-#endif // !ifdef _MXNOTHING_H
+#endif // !ifdef _MXNOTHING_H_
 
 /* eof MXNothing.h */

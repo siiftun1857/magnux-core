@@ -10,7 +10,7 @@
 ** 
 */
 #ifndef _MXARRAY_H_
-#define __MXARRAY_H
+#define _MXARRAY_H_
 
 
 #if _MSC_VER > 1000 
@@ -67,6 +67,6 @@ public:
 }//end namespace array 
 }//end namespace magnux 
 
-#endif // !ifdef _MXARRAY_H
+#endif // !ifdef _MXARRAY_H_
 
 /* eof MXArray.h */

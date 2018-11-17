@@ -10,7 +10,7 @@
 ** 
 */
 #ifndef _MXALGORITHM_H_
-#define __MXALGORITHM_H
+#define _MXALGORITHM_H_
 
 
 #if _MSC_VER > 1000 
@@ -26,6 +26,6 @@ void quickSort(bool (*cmpFun)(unsigned int,unsigned int),void(*setDataFun)(unsig
 
 }//end namespace magnux 
 
-#endif // !ifdef _MXALGORITHM_H
+#endif // !ifdef _MXALGORITHM_H_
 
 /* eof MXAlgorithm.h */
