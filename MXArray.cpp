@@ -104,7 +104,7 @@ namespace array
 	template <typename datatype>
 	datatype& MXArray<datatype>::add(datatype&initdata,int byident)
 	{
-		try{
+        try{
 			MXArray*target = getPtrByIdent(byident);
 			if(target==nullptr)
 			{
@@ -120,7 +120,7 @@ namespace array
 	// 出栈末尾 | Pop
 	template <typename datatype>
 	datatype MXArray<datatype>::popend()
-	{
+    {
 		MXArray*finalptr = getFinalPtr();
 		datatype& popdata = finalptr->data;
 		delete finalptr;
@@ -132,6 +132,10 @@ namespace array
 	datatype MXArray<datatype>::popByIdent(int byident)
 	{
 		try{
+            if(byident==0)
+            {
+                throw;
+            }
 			MXArray*target = getPtrByIdent(byident);
 			if(target==nullptr)
 			{
@@ -141,7 +145,7 @@ namespace array
 			MXArray*popnextptr = target->nextptr;
 			target->nextptr=nullptr;
 			delete target;
-			getPtrByIdent(byident-1)->nextptr = popnextptr;
+            getPtrByIdent(byident-1)->nextptr = popnextptr;//TODO:bug detected
 			return popdata;
 		}
 		catch(...)//TODO: magnux exception 
