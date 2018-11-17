@@ -13,7 +13,7 @@
 namespace magnux
 {
 
-void quickSort(bool (*cmpFun)(unsigned int,unsigned int),void(*setDataFun)(unsigned int,unsigned int),int leftEdge, int rightEdge)
+void quickSort(bool (*cmpFun)(unsigned int,unsigned int),void(*setDataFun)(unsigned int,unsigned int),unsigned int leftEdge, unsigned int rightEdge)
 {
 	//快速排序之前先判断一下当前待排序数组元素个数是不是大于1 否则就没有必要排序
 	if (leftEdge >= rightEdge)
@@ -24,11 +24,11 @@ void quickSort(bool (*cmpFun)(unsigned int,unsigned int),void(*setDataFun)(unsig
 
 	//开始进行快排算法
 	//首先我们先保存left索引对应的数据  当前数据作为切割数组的轴
-	int piovt = leftEdge;
+    unsigned int piovt = leftEdge;
 
 	//定义临时变量保存数组2端的索引
-	int leftIndex = leftEdge;
-	int rightIndex = rightEdge;
+    unsigned int leftIndex = leftEdge;
+    unsigned int rightIndex = rightEdge;
 
 	while (leftIndex < rightIndex)
 	{

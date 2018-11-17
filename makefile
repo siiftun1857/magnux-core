@@ -8,7 +8,10 @@ LIBa = MAGNUX_LIBCRE.a
 LIBso = MAGNUX_LIBCRE.so
 
 
-all : $(LIBa) $(LIBso)
+all : $(LIBa) $(LIBso) finished
+
+finished : $(LIBa) $(LIBso)
+	rm -f *.o
 
 $(OBJS): $(@:.o=.cpp)
 	$(CXX) $(CFLAGS) -c $(@:.o=.cpp) -o $@
